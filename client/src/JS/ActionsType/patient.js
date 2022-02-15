@@ -1,5 +1,7 @@
 
 
-export const REGISTER_LOAD = "REGSTER_LOAD"
-export const REGISTER_SUCC = "REGSTER_SUCC"
-export const REGISTER_FAIL = "REGSTER_FAIL"
+export const PATIENT_LOAD = "PATIENT_LOAD"
+export const PATIENT_SUCC = "PATIENT_SUCC"
+export const PATIENT_FAIL = "PATIENT_FAIL"
+
+export const PATIENT_LOGOUT = "PATIENT_LOGOUT"

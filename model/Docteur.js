@@ -23,7 +23,7 @@ const docteurSchema = new Schema({
     type: Number,
     required: true,
   },
-  adresse: {
+  address: {
     type: String,
   },
   speciality: {

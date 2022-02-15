@@ -5,7 +5,7 @@ const Patient = require("../model/Patient");
 
 exports.register = async (req, res) => {
   try {
-    const { fullName, email, password, age, phone, adresse } = req.body;
+    const { fullName, email, password, age, phone, address } = req.body;
 
     // check email
     const patientToCheck = await Patient.findOne({ email });
@@ -22,7 +22,7 @@ exports.register = async (req, res) => {
       password,
       age,
       phone,
-      adresse,
+      address,
     });
 
     //hash password
@@ -44,6 +44,7 @@ exports.register = async (req, res) => {
   }
 };
 
+//login
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;

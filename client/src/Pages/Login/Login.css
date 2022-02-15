@@ -1,0 +1,36 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-login {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 30px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 600px;
+  border-radius: 2%;
+}
+.card-title {
+  margin: 20px;
+  padding: 20px;
+}
+.form-control {
+  padding: 20px;
+  margin-top: 20px;
+}
+.btn-register {
+  width: 200px;
+  margin-top: 20px;
+}
+.nav-btn {
+  margin-top: 100px;
+}
+.bascule {
+  margin-top: 50px;
+}

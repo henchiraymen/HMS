@@ -6,7 +6,7 @@ const Docteur = require("../model/Docteur");
 // register docteur
 exports.register = async (req, res) => {
   try {
-    const { fullName, email, password, phone, adresse, speciality } = req.body;
+    const { fullName, email, password, phone, address, speciality } = req.body;
 
     // check email
     const docteurToCheck = await Docteur.findOne({ email });
@@ -22,7 +22,7 @@ exports.register = async (req, res) => {
       email,
       password,
       phone,
-      adresse,
+      address,
       speciality,
     });
 
