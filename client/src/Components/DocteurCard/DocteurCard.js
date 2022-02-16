@@ -11,8 +11,8 @@ const DocteurCard = ({ docteur }) => {
       <Card className="card">
         <Card.Img className="image" variant="top" src={userImage} />
         <Card.Body>
-          <h5>Docteur : {docteur.fullName}</h5>
-          <h6>Speciality : {docteur.speciality}</h6>
+          <h5>Dr. {docteur.fullName}</h5>
+          <h6>Spécialité : {docteur.speciality}</h6>
           <div>
             <Button className="b" variant="warning">
               more information

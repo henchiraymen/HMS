@@ -80,7 +80,7 @@ const Register = ({ history }) => {
                 id="fullName"
                 className="form-control"
                 placeholder="Full Name"
-                value={newPatient.name}
+                value={newPatient.fullName}
                 onChange={handleChangeNewPatient}
               />
               <input
@@ -148,7 +148,7 @@ const Register = ({ history }) => {
                 id="fullName"
                 className="form-control"
                 placeholder="Full Name"
-                value={newDocteur.name}
+                value={newDocteur.fullName}
                 onChange={handleChangeNewDocteur}
               />
               <input

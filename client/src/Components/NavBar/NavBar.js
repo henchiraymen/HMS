@@ -27,12 +27,16 @@ const NavBar = () => {
                   home
                 </Button>
               </Link>
-              <Button variant="warning" className="btn">
-                Docteurs
-              </Button>
-              <Button variant="warning" className="btn">
-                Mes Rendez-vous
-              </Button>
+              <Link to="/docteurs">
+                <Button variant="warning" className="btn">
+                  Docteurs
+                </Button>
+              </Link>
+              <Link to="/patientrendezvous">
+                <Button variant="warning" className="btn">
+                  Mes Rendez-vous
+                </Button>
+              </Link>
               <Link to="/login">
                 <Button
                   variant="warning"
@@ -50,9 +54,11 @@ const NavBar = () => {
                   home
                 </Button>
               </Link>
-              <Button variant="warning" className="btn">
-                Mes Rendez-vous
-              </Button>
+              <Link to="/docteurrendezvous">
+                <Button variant="warning" className="btn">
+                  Mes Rendez-vous
+                </Button>
+              </Link>
               <Link to="/profile">
                 <Button variant="warning" className="btn">
                   Profile

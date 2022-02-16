@@ -7,7 +7,7 @@ const Footer = () => {
       <div
         className="text-center p-4"
       >
-        © 2022 Copyright Henchir
+        © 2022 Copyright AH-Consulting
       </div>
     </footer>
   );

@@ -1,4 +1,5 @@
 import {
+  CURRENT_PATIENT,
   PATIENT_FAIL,
   PATIENT_LOAD,
   PATIENT_LOGOUT,
@@ -42,6 +43,8 @@ const patientReducer = (state = initSate, { type, payload }) => {
         isPatientAuth: false,
         isDocteurAuth: false,
       };
+    case CURRENT_PATIENT:
+      return { ...state, load: false, patient: payload, isPatientAuth: true };
     default:
       return state;
   }

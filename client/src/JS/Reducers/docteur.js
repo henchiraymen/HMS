@@ -1,4 +1,6 @@
 import {
+  CURRENT_DOCTEUR,
+  DELETE_DOCTEUR_FAIL,
   DOCTEUR_FAIL,
   DOCTEUR_LOAD,
   DOCTEUR_LOGOUT,
@@ -52,6 +54,11 @@ const docteurReducer = (state = initSate, { type, payload }) => {
         isPatientAuth: false,
         isDocteurAuth: false,
       };
+    case CURRENT_DOCTEUR:
+      return { ...state, load: false, docteur: payload, isDocteurAuth: true };
+    case DELETE_DOCTEUR_FAIL:
+      localStorage.removeItem("token");
+      return { ...state, errors: payload };
     default:
       return state;
   }

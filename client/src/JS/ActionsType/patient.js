@@ -5,3 +5,5 @@ export const PATIENT_SUCC = "PATIENT_SUCC"
 export const PATIENT_FAIL = "PATIENT_FAIL"
 
 export const PATIENT_LOGOUT = "PATIENT_LOGOUT"
+
+export const CURRENT_PATIENT = "CURRENT_PATIENT";

@@ -1,0 +1,17 @@
+.cardDetails {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  width: 65%;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  background-color: navajowhite;
+}
+.part{
+  margin-right: 30px;
+  padding-right: 20px;
+}
+.bbb{
+  float: right;
+}

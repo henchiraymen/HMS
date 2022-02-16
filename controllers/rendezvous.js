@@ -3,9 +3,13 @@ const Rendezvous = require("../model/Rendezvous");
 //add rendez-vous
 exports.addRendezvous = async (req, res) => {
   try {
-    const { patientId, docteurId, date, status } = req.body;
+    const { patientId, docteurId, date, time, status } = req.body;
     //check the date of the rendezvous
-    const rendezvousToCheck = await Rendezvous.findOne({ date });
+    const rendezvousToCheck = await Rendezvous.findOne({
+      docteurId,
+      date,
+      time,
+    });
     if (rendezvousToCheck) {
       return res.status(400).send({
         errors: [{ msg: "il y a un autre rendez-vous a cette date !!!! " }],
@@ -17,6 +21,7 @@ exports.addRendezvous = async (req, res) => {
       patientId,
       docteurId,
       date,
+      time,
       status,
     });
 
@@ -55,32 +60,32 @@ exports.updateRendezvous = async (req, res) => {
 
 //get rendez-vous by patientId
 exports.getRendezvousByPatientId = async (req, res) => {
-    try {
-      const { patientId } = req.params;
-      const rendezvousToFind = await Rendezvous.find({ patientId });
-      if(!rendezvousToFind){
-        res.status(400).send({ msg: "can not find rendez-vous !!! " });
-      }
-      res
-        .status(200)
-        .send({ msg: "rendez-vous find successfuly ...", rendezvousToFind });
-    } catch (error) {
-      res.status(400).send({ msg: "can not find rendez-vous !!! ", error });
+  try {
+    const { patientId } = req.params;
+    const rendezvousToFind = await Rendezvous.find({ patientId });
+    if (!rendezvousToFind) {
+      res.status(400).send({ msg: "can not find rendez-vous !!! " });
     }
-  };
+    res
+      .status(200)
+      .send({ msg: "rendez-vous find successfuly ...", rendezvousToFind });
+  } catch (error) {
+    res.status(400).send({ msg: "can not find rendez-vous !!! ", error });
+  }
+};
 
 //get rendez-vous by docteurId
 exports.getRendezvousByDocteurId = async (req, res) => {
-    try {
-      const { docteurId } = req.params;
-      const rendezvousToFind = await Rendezvous.find({ docteurId });
-      if(!rendezvousToFind){
-        res.status(400).send({ msg: "can not find rendez-vous !!! " });
-      }
-      res
-        .status(200)
-        .send({ msg: "rendez-vous find successfuly ...", rendezvousToFind });
-    } catch (error) {
-      res.status(400).send({ msg: "can not find rendez-vous !!! ", error });
+  try {
+    const { docteurId } = req.params;
+    const rendezvousToFind = await Rendezvous.find({ docteurId });
+    if (!rendezvousToFind) {
+      res.status(400).send({ msg: "can not find rendez-vous !!! " });
     }
-  };
+    res
+      .status(200)
+      .send({ msg: "rendez-vous find successfuly ...", rendezvousToFind });
+  } catch (error) {
+    res.status(400).send({ msg: "can not find rendez-vous !!! ", error });
+  }
+};

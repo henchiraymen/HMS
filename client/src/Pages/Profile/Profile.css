@@ -1,0 +1,21 @@
+.profileCard {
+  background-color: navajowhite;
+  width: 500px;
+  padding: 20px;
+  border-radius: 5%;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px;
+}
+.btnss {
+  margin-top: 20px;
+}
+.info {
+  margin: 30px;
+  padding: 50px;
+  border: solid;
+  border-radius: 5%;
+}

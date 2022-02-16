@@ -14,11 +14,16 @@ const rendezvousSchema = new Schema({
     required: true,
   },
   date: {
-    type: Date,
+    type: String,
+    required: true,
+  },
+  time: {
+    type: String,
     required: true,
   },
   status: {
     type: String,
+    default: "En attente",
   },
 });
 
