@@ -3,7 +3,15 @@ const Rendezvous = require("../model/Rendezvous");
 //add rendez-vous
 exports.addRendezvous = async (req, res) => {
   try {
-    const { patientId, docteurId, date, time, status } = req.body;
+    const {
+      patientId,
+      docteurId,
+      docteurName,
+      patientName,
+      date,
+      time,
+      status,
+    } = req.body;
     //check the date of the rendezvous
     const rendezvousToCheck = await Rendezvous.findOne({
       docteurId,
@@ -20,6 +28,8 @@ exports.addRendezvous = async (req, res) => {
     const newRendezvous = new Rendezvous({
       patientId,
       docteurId,
+      docteurName,
+      patientName,
       date,
       time,
       status,

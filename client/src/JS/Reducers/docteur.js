@@ -14,6 +14,7 @@ const initSate = {
   docteurList: [],
   load: false,
   docteur: {},
+  docteurName: {},
   errors: [],
   isPatientAuth: false,
   isDocteurAuth: false,

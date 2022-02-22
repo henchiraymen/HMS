@@ -65,7 +65,7 @@ export const getDocteur = (docteurId) => async (dispatch) => {
   dispatch({ type: GET_DOCTEUR_LOAD });
   try {
     let result = await axios.get(`/api/docteur/getDocteur/${docteurId}`);
-    dispatch({ type: GET_DOCTEUR_SUCC, payload: result.data.docteur });
+    dispatch({ type: GET_DOCTEUR_SUCC, payload: result.data.docteurToFind.fullName });
   } catch (error) {
     dispatch({ type: GET_DOCTEUR_FAIL, payload: error.response.data });
   }

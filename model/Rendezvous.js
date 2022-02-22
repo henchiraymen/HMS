@@ -13,6 +13,14 @@ const rendezvousSchema = new Schema({
     type: String,
     required: true,
   },
+  docteurName: {
+    type: String,
+    required: true,
+  },
+  patientName: {
+    type: String,
+    required: true,
+  },
   date: {
     type: String,
     required: true,

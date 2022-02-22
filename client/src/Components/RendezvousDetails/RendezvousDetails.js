@@ -1,21 +1,26 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-import { getDocteur } from "../../JS/Actions/docteur";
+import "./RendezvousDetails.css";
 
-const RendezvousDetails = (rendezvous) => {
+const RendezvousDetails = ({ rendezvous }) => {
   const patient = useSelector((state) => state.patientReducer.patient);
-
-  const docteur = getDocteur(rendezvous.docteurId);
 
   return (
     <div>
-      <div className="part">
-        <h5>Dr. {docteur.fullName}</h5>
-        <h6>Patient : {patient.fullName}</h6>
-        <h6>Date : {rendezvous.date}</h6>
-        <h6>Heure : {rendezvous.time}</h6>
-        <h6>Status : {rendezvous.status}</h6>
+      <div className="R-card">
+        <div className="R-card-body">
+          <h5 className="R-card-title">Rendez-vous</h5>
+          <h6 className="R-card-subtitle mb-2 text-muted">
+            Patient : {patient.fullName}
+          </h6>
+          <h6 className="R-card-subtitle mb-2 text-muted">
+            Docteur : {rendezvous.docteurName}
+          </h6>
+          <p>Date : {rendezvous.date} </p>
+          <p> Heure : {rendezvous.time}</p>
+          <h6>Status : {rendezvous.status}</h6>
+        </div>
       </div>
     </div>
   );

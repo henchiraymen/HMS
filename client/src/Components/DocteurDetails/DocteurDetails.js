@@ -16,9 +16,11 @@ const DocteurDetails = ({ docteur }) => {
   const [newRendezvous, setNewRendezvous] = useState({
     patientId: "",
     docteurId: "",
+    docteurName: "",
+    patientName:"",
     date: "",
     time: "",
-    status: "En Attente",
+    status: "",
   });
 
   const dispatch = useDispatch();
@@ -28,6 +30,9 @@ const DocteurDetails = ({ docteur }) => {
       ...newRendezvous,
       patientId: patient._id,
       docteurId: docteur._id,
+      docteurName: docteur.fullName,
+      patientName: patient.fullName,
+      status: "En Attente",
       [e.target.name]: e.target.value,
     });
   };
