@@ -1,10 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 import "./RendezvousDetails.css";
 
 const RendezvousDetails = ({ rendezvous }) => {
-  const patient = useSelector((state) => state.patientReducer.patient);
+  
 
   return (
     <div>
@@ -12,7 +11,7 @@ const RendezvousDetails = ({ rendezvous }) => {
         <div className="R-card-body">
           <h5 className="R-card-title">Rendez-vous</h5>
           <h6 className="R-card-subtitle mb-2 text-muted">
-            Patient : {patient.fullName}
+            Patient : {rendezvous.patientName}
           </h6>
           <h6 className="R-card-subtitle mb-2 text-muted">
             Docteur : {rendezvous.docteurName}

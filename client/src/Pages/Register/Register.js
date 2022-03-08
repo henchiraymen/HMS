@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { registerPatient } from "../../JS/Actions/patient";
 import { registerDocteur } from "../../JS/Actions/docteur";
@@ -8,6 +8,9 @@ import { registerDocteur } from "../../JS/Actions/docteur";
 import "./Register.css";
 
 const Register = ({ history }) => {
+  const errorsP = useSelector((state) => state.patientReducer.errors);
+  const errorsD = useSelector((state) => state.docteurReducer.errors);
+
   const [newPatient, setNewPatient] = useState({
     fullName: "",
     email: "",
@@ -73,6 +76,10 @@ const Register = ({ history }) => {
         {showPatient && (
           <div className="card-patient">
             <h4 className="card-title"> Registrer entant que patient</h4>
+            {errorsP &&
+              errorsP.map((error) => (
+                <h5 style={{ color: "red" }}>{error.msg}</h5>
+              ))}
             <form className="form">
               <input
                 type="text"
@@ -141,6 +148,10 @@ const Register = ({ history }) => {
         {showDocteur && (
           <div className="card-patient">
             <h4 className="card-title"> Registrer entant que Docteur</h4>
+            {errorsD &&
+              errorsD.map((error) => (
+                <h5 style={{ color: "red" }}>{error.msg}</h5>
+              ))}
             <form className="form">
               <input
                 type="text"

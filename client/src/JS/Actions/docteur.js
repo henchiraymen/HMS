@@ -26,6 +26,7 @@ export const registerDocteur = (newDocteur, history) => async (dispatch) => {
     dispatch({ type: DOCTEUR_SUCC, payload: result.data }); //{msg,docteur,token}
     history.push("/profile");
   } catch (error) {
+    
     dispatch({ type: DOCTEUR_FAIL, payload: error.response.data }); //{errors : []}
   }
 };
@@ -65,7 +66,10 @@ export const getDocteur = (docteurId) => async (dispatch) => {
   dispatch({ type: GET_DOCTEUR_LOAD });
   try {
     let result = await axios.get(`/api/docteur/getDocteur/${docteurId}`);
-    dispatch({ type: GET_DOCTEUR_SUCC, payload: result.data.docteurToFind.fullName });
+    dispatch({
+      type: GET_DOCTEUR_SUCC,
+      payload: result.data.docteurToFind.fullName,
+    });
   } catch (error) {
     dispatch({ type: GET_DOCTEUR_FAIL, payload: error.response.data });
   }

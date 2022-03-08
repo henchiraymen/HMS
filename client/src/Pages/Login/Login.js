@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginDocteur } from "../../JS/Actions/docteur";
 import { loginPatient } from "../../JS/Actions/patient";
 
 import "./Login.css";
 const Login = ({ history }) => {
+  const errorsL = useSelector((state) => state.patientReducer.errors);
+
   const [user, setUser] = useState({ email: "", password: "" });
 
   const dispatch = useDispatch();
@@ -18,6 +20,10 @@ const Login = ({ history }) => {
     <div className="login">
       <div className="card-login">
         <h4 className="card-title"> Login </h4>
+        {errorsL &&
+              errorsL.map((error) => (
+                <h5 style={{ color: "red" }}>{error.msg}</h5>
+              ))}
         <form className="form">
           <input
             type="email"
