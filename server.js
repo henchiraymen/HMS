@@ -1,6 +1,8 @@
 // require express
 const express = require("express");
 
+const path = require("path");
+
 // instance of express
 const app = express();
 
@@ -24,6 +26,14 @@ const rendezvousRouter = require("./routes/rendezvous");
 app.use("/api/patient", patientRouter);
 app.use("/api/docteur", docteurRouter);
 app.use("/api/rendezvous", rendezvousRouter);
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 //create server
 app.listen(port, (error) => {
